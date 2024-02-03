@@ -11,10 +11,24 @@ This plugin makes possible to **login to Joomla**! by a **php GET request**, so 
 ![Static Badge](https://img.shields.io/badge/plugin-darkviolet?logo=joomla&logoColor=white&label=type)
 ![Static Badge](https://img.shields.io/badge/7.0%2B%20%7C%208.0%2B-purple?logo=php&logoColor=white&label=php)
 
+---
+
 #### Links
 - :link: [Project homepage](https://www.digigreg.com/en/products/joomla-plugins/digi-get-login.html)
 - :link: [JED page](https://extensions.joomla.org/extension/digi-get-login/)
 - :book: [Documentation](https://www.digigreg.com/en/wiki/digi-get-login.html)
+- :speech_balloon: [Discord server](https://discord.gg/VCtqbgjERH)
+
+---
+
+#### Support
+:coffee: Did you find it useful? You might consider buying me a coffee :blush:
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z4U0RY9)
+
+Thanks for all the caffeine :coffee: :coffee: :coffee:
+
+---
 
 #### Contributing
 Pull requests with bugfixes and translations are much appreciated. I'll be happy to review them and merge them once they're ready.
