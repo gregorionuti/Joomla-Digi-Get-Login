@@ -8,6 +8,7 @@
  * 
  */
  
+/* general */
 label.hidden,
 label[id*=hidden] {
     display: none;
@@ -21,14 +22,26 @@ label[id*=hidden] {
 .controls a[target="_blank"]::before {
 	content: "";
 }
-.share-me + .share-me {
-	 margin-top: 5px;
+
+/* restore descriptions due of joomla 4 lack */
+.hide-aware-inline-help {
+	display: block !important;
+	margin-top: 0.5rem;
 }
+
+/* spacers */
 .spacer .title label {
 	font-size: 18px;
 	font-weight: bold;
 	line-height: 20px;
 }
+.spacer .hide-aware-inline-help {
+	margin-top: 0.3rem;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid #BAC9DE;
+}
+
+/* media queries */
 @media (min-width: 768px) {
 	.extended-textarea,
 	.input-extended-textarea {

@@ -3,16 +3,16 @@
     <identifier>plg://site/digigetlogin</identifier>
 	<name>PLG_SYSTEM_DIGIGETLOGIN</name>
 	<author>Digigreg</author>
-	<creationDate>Jan 2023</creationDate>
-	<copyright>Copyright Digigreg 2014-2022</copyright>
+	<creationDate>Mar 2025</creationDate>
+	<copyright>Copyright Digigreg 2014-2025</copyright>
     <authorEmail>info@digigreg.com</authorEmail>
 	<authorUrl>https://www.digigreg.com</authorUrl>
-	<version>1.0.5</version>
+	<version>1.0.6</version>
     <license>GNU General Public License version 2 or later</license>
 	<description>PLG_SYSTEM_DIGIGETLOGIN_XML_DESCRIPTION</description>
     <files>
-		<folder>administrator</folder>
-		<folder>settings</folder>
+		<folder>assets</folder>
+		<folder>extras</folder>
 		<filename plugin="digigetlogin">digigetlogin.php</filename>
 		<filename>digigetlogin.xml</filename>
     </files>
@@ -22,16 +22,18 @@
 	</languages>
 	<config>
 		<fields name="params">
-			<fieldset name="basic" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_BASIC" addfieldpath="/plugins/system/digigetlogin/administrator/elements">
+			<fieldset name="basic" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_BASIC" addfieldpath="/plugins/system/digigetlogin/extras/elements">
 				
-				<field name="asset_hidden" type="asset" />
-				
-				<field name="share-me_hidden" type="shareme" />
-				
-				<field name="advertising_hidden" type="digigetloginadv" />
+				<field name="buttons_hidden" type="buttons" />
+                
+                <field name="donation_hidden" type="donation" />
+                
+                <field name="support_hidden" type="support" />
+                
+                <field name="asset_hidden" type="asset" />
 				
 			</fieldset>
-			<fieldset name="settings" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_SETTINGS" addfieldpath="/plugins/system/digigetlogin/administrator/elements">
+			<fieldset name="settings" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_SETTINGS" addfieldpath="/plugins/system/digigetlogin/extras/elements">
 				
 				<field name="redirect-type" type="radio" class="btn-group" default="0" label="PLG_SYSTEM_DIGIGETLOGIN_FIELD_REDIRECT_TYPE_LBL" description="PLG_SYSTEM_DIGIGETLOGIN_FIELD_REDIRECT_TYPE_DESC">
 					<option value="0">PLG_SYSTEM_DIGIGETLOGIN_FIELD_REDIRECT_TYPE_MENU</option>
@@ -47,7 +49,7 @@
 				<field name="url-redirect-error" type="text" showon="redirect-type:1" label="PLG_SYSTEM_DIGIGETLOGIN_FIELD_LOGIN_ERROR_URL_LBL" description="PLG_SYSTEM_DIGIGETLOGIN_FIELD_LOGIN_ERROR_URL_DESC" />
 			
 			</fieldset>
-			<fieldset name="advanced" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_ADVANCED" addfieldpath="/plugins/system/digigetlogin/administrator/elements">
+			<fieldset name="advanced" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_ADVANCED" addfieldpath="/plugins/system/digigetlogin/extras/elements">
 				
 				<field name="username-var" type="text" default="username" label="PLG_SYSTEM_DIGIGETLOGIN_FIELD_USERNAME_VARIABLE_LBL" description="PLG_SYSTEM_DIGIGETLOGIN_FIELD_USERNAME_VARIABLE_DESC" />
 				
@@ -64,10 +66,10 @@
                 </field>
                 
 			</fieldset>
-			<fieldset name="backup" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_BACKUP" addfieldpath="/plugins/system/digigetlogin/administrator/elements"> 
-				 
-                <field name="backup_hidden" type="backup" /> 
-                        
+			<fieldset name="extra_features" label="PLG_SYSTEM_DIGIGETLOGIN_FIELDSET_EXTRA_FEATURES" addfieldpath="/plugins/system/digigetlogin/extras/elements">           
+                
+                <field name="adv_hidden" type="digigetloginadv" />
+                
             </fieldset>
 		</fields>
 	</config>

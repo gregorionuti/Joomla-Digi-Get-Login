@@ -8,6 +8,13 @@
  * 
  */
 
+// detect if jquery is loaded
+window.onload = function() {
+    if (!window.jQuery) {  
+        alert("It appears that you have a misconfiguration in your javascript files. This extension needs jQuery to properly work, so you may experience some issues.");
+    }
+}
+
 // jquery no conflict declaration
 var $j = jQuery.noConflict();
 
@@ -29,6 +36,7 @@ $j(document).ready(function() {
     	$j(item_id).keyup(function() {
 			var content = $j(item_id).val();
 			if (content) {
+				// count the spaces to detect how many elements there are in the array
 				var spaces = (content.split(' ').length - 1);
 				if (spaces <= 2) {
 					$j(item_id).css('border-color',colorError).css('box-shadow',boxShadowError);
@@ -37,6 +45,18 @@ $j(document).ready(function() {
 				} else if (spaces == 3) {
 					$j(item_id).css('border-color','').css('box-shadow','');
 				}
+				// check each element of the array for errors
+				var chunks = content.split(' ');
+				$j.each(chunks, function(index, value) {
+					// if the value is not numeric
+					if (!$j.isNumeric(value)) {
+						$j(item_id).css('border-color',colorError).css('box-shadow',boxShadowError);
+					}
+					// if the value starts with 0 and is longer than one character
+					if (value.match('^0') && (value.length >= 2) ) {
+						$j(item_id).css('border-color',colorError).css('box-shadow',boxShadowError);
+					}
+				});
 			} else {
 				$j(item_id).css('border-color','').css('box-shadow','');
 			}
