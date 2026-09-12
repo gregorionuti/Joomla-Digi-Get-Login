@@ -3,11 +3,11 @@
     <identifier>plg://site/digigetlogin</identifier>
 	<name>PLG_SYSTEM_DIGIGETLOGIN</name>
 	<author>Digigreg</author>
-	<creationDate>Mar 2025</creationDate>
+	<creationDate>Sep 2026</creationDate>
 	<copyright>Copyright Digigreg 2014-2025</copyright>
     <authorEmail>info@digigreg.com</authorEmail>
 	<authorUrl>https://www.digigreg.com</authorUrl>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
     <license>GNU General Public License version 2 or later</license>
 	<description>PLG_SYSTEM_DIGIGETLOGIN_XML_DESCRIPTION</description>
     <files>

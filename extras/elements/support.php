@@ -15,9 +15,12 @@ defined('_JEXEC') or die;
 // Define DS
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
-jimport('joomla.form.formfield');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 
-class JFormFieldSupport extends JFormField {
+class JFormFieldSupport extends FormField {
     protected $type = 'Support';
     
     protected function getInput() {
@@ -32,7 +35,7 @@ class JFormFieldSupport extends JFormField {
         $text_prefix = 'PLG_SYSTEM_DIGIGETLOGIN';
 		
     	// General variables
-    	$document = JFactory::getDocument();
+    	$document = Factory::getDocument();
     	$joomlaVersion = JVERSION;
     	
     	// Specific classes and styles based on Joomla version
@@ -89,7 +92,7 @@ class JFormFieldSupport extends JFormField {
 		$document->addStyleDeclaration('
 			#digigreg_support {
 				background-color: #f89406;
-				background-image: url("'.JURI::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'pattern-support.png");
+				background-image: url("'.Uri::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'pattern-support.png");
 				background-repeat: repeat;
 				position: relative;
 				z-index: 0;
@@ -109,14 +112,14 @@ class JFormFieldSupport extends JFormField {
         $html .= '<div class="'.$col_class.'">';
         $html .= '<div id="digigreg_support" class="'.$card_class.'">';
         $html .= '<div id="digigreg_support_text" class="'.$card_body_class.'">';
-        $html .= '<h2 class="'.$card_title_class.' text-light">'.strToUpper(JText::_($text_prefix.'_SUPPORT_TITLE')).'</h2>';
-        $html .= '<p class="'.$card_text_class.' bg-light text-dark rounded p-3">'.JText::_($text_prefix.'_SUPPORT_DESC').'</p>';
+        $html .= '<h2 class="'.$card_title_class.' text-light">'.strToUpper(Text::_($text_prefix.'_SUPPORT_TITLE')).'</h2>';
+        $html .= '<p class="'.$card_text_class.' bg-light text-dark rounded p-3">'.Text::_($text_prefix.'_SUPPORT_DESC').'</p>';
 		$html .= '<p class="'.$card_text_class.' bg-warning text-dark rounded p-3">';
-        $html .= '<span class="text-uppercase">'.JText::_($text_prefix.'_SUPPORT_GO_TO_GITHUB').'</span> <br />';
+        $html .= '<span class="text-uppercase">'.Text::_($text_prefix.'_SUPPORT_GO_TO_GITHUB').'</span> <br />';
         $html .= '<span class="btn-group btn-group-sm mt-1 mb-1" role="group">';
-        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_link.'" target="_blank">'.strToUpper(JText::_($text_prefix.'_SUPPORT_BROWSE_REPO')).'</a>';
-        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_pull_link.'" target="_blank">'.strToUpper(JText::_($text_prefix.'_SUPPORT_PULL_REQUEST')).'</a>';
-        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_issues_link.'" target="_blank">'.strToUpper(JText::_($text_prefix.'_SUPPORT_REPORT_BUG')).'</a>';
+        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_link.'" target="_blank">'.strToUpper(Text::_($text_prefix.'_SUPPORT_BROWSE_REPO')).'</a>';
+        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_pull_link.'" target="_blank">'.strToUpper(Text::_($text_prefix.'_SUPPORT_PULL_REQUEST')).'</a>';
+        $html .= '<a class="btn '.$btn_dark_class.' btn-sm mt-1" href="'.$github_issues_link.'" target="_blank">'.strToUpper(Text::_($text_prefix.'_SUPPORT_REPORT_BUG')).'</a>';
         $html .= '</span> <br />';
         $html .= '</p>';
 		$html .= '</div>';

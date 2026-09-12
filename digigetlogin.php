@@ -19,6 +19,7 @@ if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 use Joomla\CMS\Uri\Uri;
 use Joomla\CMS\Factory;
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Plugin\CMSPlugin;
 
 // include jquery library only in admin
 if (Factory::getApplication()->isClient('administrator')) {
@@ -26,7 +27,7 @@ if (Factory::getApplication()->isClient('administrator')) {
 	$document->addScript(DS.'media'.DS.'vendor'.DS.'jquery'.DS.'js'.DS.'jquery.min.js');
 }
 
-class plgSystemDigigetlogin extends JPlugin	{
+class plgSystemDigigetlogin extends CMSPlugin	{
 		
 	protected $_username;
     protected $_password;
@@ -112,9 +113,9 @@ class plgSystemDigigetlogin extends JPlugin	{
 		$menuLinkRedirectLogin = $menu->getItem($menuItemRedirectLogin);
 		$menuLinkRedirectError = $menu->getItem($menuItemRedirectError);
 		$linkLogin = $menuLinkRedirectLogin->link.'&Itemid='.$menuLinkRedirectLogin->id;
-		$linkError = new URI($menuLinkRedirectError->link.'&Itemid='.$menuLinkRedirectError->id);
-        
-		$user = Factory::getUser();
+		$linkError = new Uri($menuLinkRedirectError->link.'&Itemid='.$menuLinkRedirectError->id);
+
+		$user = Factory::getApplication()->getIdentity();
 		$user_id = $user->id;
         if ($user_id) {
 			if ($result) {

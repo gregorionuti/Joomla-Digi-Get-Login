@@ -15,9 +15,11 @@ defined('_JEXEC') or die;
 // Define DS
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
-jimport('joomla.form.formfield');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Language\Text;
 
-class JFormFieldButtons extends JFormField {
+class JFormFieldButtons extends FormField {
     protected $type = 'Buttons';
     
     protected function getInput() {
@@ -30,7 +32,7 @@ class JFormFieldButtons extends JFormField {
 		$text_prefix = 'PLG_SYSTEM_DIGIGETLOGIN';
 		
 		// General variables
-    	$document = JFactory::getDocument();
+    	$document = Factory::getDocument();
         $joomlaVersion = JVERSION;
     	
     	// Specific classes and styles based on Joomla version
@@ -78,36 +80,36 @@ class JFormFieldButtons extends JFormField {
         $html .= '<div class="'.$col_class.'" id="digigreg_button_like">';
         
         // JED
-        $html .= '<p class="small">'.JText::_(strToUpper($text_prefix).'_BUTTON_DO_YOU_LIKE').'</p>';
+        $html .= '<p class="small">'.Text::_(strToUpper($text_prefix).'_BUTTON_DO_YOU_LIKE').'</p>';
         $html .= '<div class="button-container" id="digigreg_button_like_jed">';
-        $html .= '<a class="btn '.$btn_success_class.' btn-sm" href="'.$link_jed.'" target="_blank" title="'.JText::_(strToUpper($text_prefix).'_BUTTON_REVIEW_JED_DESC').'"><i class="icon-thumbs-up"></i> '.JText::_(strToUpper($text_prefix).'_BUTTON_REVIEW_JED_TITLE').'</a>';
+        $html .= '<a class="btn '.$btn_success_class.' btn-sm" href="'.$link_jed.'" target="_blank" title="'.Text::_(strToUpper($text_prefix).'_BUTTON_REVIEW_JED_DESC').'"><i class="icon-thumbs-up"></i> '.Text::_(strToUpper($text_prefix).'_BUTTON_REVIEW_JED_TITLE').'</a>';
         $html .= '</div>';
         
         $html .= '</div>';
         $html .= '<div class="'.$col_class.'" id="digigreg_button_help">';
         
         // Support
-		$html .= '<p class="small">'.JText::_(strToUpper($text_prefix).'_BUTTON_NEED_HELP').'</p>';
+		$html .= '<p class="small">'.Text::_(strToUpper($text_prefix).'_BUTTON_NEED_HELP').'</p>';
 		$html .= '<div class="button-container" id="digigreg_button_help_links">';
-		$html .= '<a class="btn '.$btn_warning_class.' btn-sm" href="'.$link_support.'" title="'.JText::_(strToUpper($text_prefix).'_BUTTON_BUY_SUPPORT_DESC').'"><i class="icon-warning"></i> '.JText::_(strToUpper($text_prefix).'_BUTTON_BUY_SUPPORT_TITLE').'</a>';
+		$html .= '<a class="btn '.$btn_warning_class.' btn-sm" href="'.$link_support.'" title="'.Text::_(strToUpper($text_prefix).'_BUTTON_BUY_SUPPORT_DESC').'"><i class="icon-warning"></i> '.Text::_(strToUpper($text_prefix).'_BUTTON_BUY_SUPPORT_TITLE').'</a>';
 		$html .= '</div>';
         
         $html .= '</div>';
         $html .= '<div class="'.$col_class.'" id="digigreg_button_doc">';
         
         // Docs
-		$html .= '<p class="small">'.JText::_(strToUpper($text_prefix).'_BUTTON_NEED_DOCS').'</p>';
+		$html .= '<p class="small">'.Text::_(strToUpper($text_prefix).'_BUTTON_NEED_DOCS').'</p>';
 		$html .= '<div class="button-container" id="digigreg_button_doc_links">';
-		$html .= '<a class="btn '.$btn_info_class.' btn-sm" href="'.$link_documentation.'" target="_blank" title="'.JText::_(strToUpper($text_prefix).'_BUTTON_READ_DOCS_DESC').'"><i class="icon-file"></i> '.JText::_(strToUpper($text_prefix).'_BUTTON_READ_DOCS_TITLE').'</a>';
+		$html .= '<a class="btn '.$btn_info_class.' btn-sm" href="'.$link_documentation.'" target="_blank" title="'.Text::_(strToUpper($text_prefix).'_BUTTON_READ_DOCS_DESC').'"><i class="icon-file"></i> '.Text::_(strToUpper($text_prefix).'_BUTTON_READ_DOCS_TITLE').'</a>';
 		$html .= '</div>';
 		
         $html .= '</div>';
         $html .= '<div class="'.$col_class.'" id="digigreg_button_more">';
         
         // Other extensions
-		$html .= '<p class="small">'.JText::_(strToUpper($text_prefix).'_BUTTON_NEED_MORE').'</p>';
+		$html .= '<p class="small">'.Text::_(strToUpper($text_prefix).'_BUTTON_NEED_MORE').'</p>';
 		$html .= '<div class="button-container" id="digigreg_button_more_products">';
-		$html .= '<a class="btn '.$btn_dark_class.' btn-sm" href="'.$link_products.'" target="_blank" title="'.JText::_(strToUpper($text_prefix).'_BUTTON_MORE_EXTENSIONS_DESC').'"><i class="icon-grid"></i> '.JText::_(strToUpper($text_prefix).'_BUTTON_MORE_EXTENSIONS_TITLE').'</a>';
+		$html .= '<a class="btn '.$btn_dark_class.' btn-sm" href="'.$link_products.'" target="_blank" title="'.Text::_(strToUpper($text_prefix).'_BUTTON_MORE_EXTENSIONS_DESC').'"><i class="icon-grid"></i> '.Text::_(strToUpper($text_prefix).'_BUTTON_MORE_EXTENSIONS_TITLE').'</a>';
 		$html .= '</div>';
         
         $html .= '</div>';

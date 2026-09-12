@@ -15,16 +15,18 @@ defined('_JEXEC') or die;
 // define ds variable for joomla 3 compatibility
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
-jimport('joomla.filesystem.file');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Uri\Uri;
 
-class JFormFieldDigigetloginadv extends JFormField {
+class JFormFieldDigigetloginadv extends FormField {
     protected $type = 'Digigetloginadv';
     
     protected function getInput() {
     	
     	// General variables
     	$support_question_link = 'https://www.digigreg.com/#contact-presale';
-    	$document = JFactory::getDocument();
+    	$document = Factory::getDocument();
         $joomlaVersion = JVERSION;
         
         // links
@@ -71,7 +73,7 @@ class JFormFieldDigigetloginadv extends JFormField {
 			#adv_wrapper {
 				background-color: #3498db;
 				border-color: #3498db;
-				background-image: url("'.JURI::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'pattern-extras.png");
+				background-image: url("'.Uri::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'pattern-extras.png");
 				background-repeat: repeat;
 			}
 			#adv_wrapper a[target="_blank"]::before {
@@ -98,7 +100,7 @@ class JFormFieldDigigetloginadv extends JFormField {
         // Params Backup
         $html .= '<div class="'.$col_class.'" id="adv_params_backup">';
         $html .= '<div class="'.$card_class.' text-start text-left">';
-        $html .= '<a href="'.$link_digigreg.'"><img alt="Params Backup" class="card-img-top" src="'.JURI::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-params-backup.png" /></a>';
+        $html .= '<a href="'.$link_digigreg.'"><img alt="Params Backup" class="card-img-top" src="'.Uri::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-params-backup.png" /></a>';
         $html .= '<div class="card-body">';
         $html .= '<h5 class="card-title mb-4">Params Backup plugin - Free</h5>';
         $html .= '<p class="card-text">With Params Backup you can save settings of Joomla extension you are editing, and then reload them when necessary, with one click. It works with modules, plugins, templates and component configurations.</p>';
@@ -111,7 +113,7 @@ class JFormFieldDigigetloginadv extends JFormField {
         // Iubenda
         $html .= '<div class="'.$col_class.'" id="adv_iubenda">';
         $html .= '<div class="'.$card_class.' text-start text-left">';
-        $html .= '<a href="'.$link_iubenda.'"><img alt="Iubenda" class="card-img-top" src="'.JURI::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-iubenda.png" /></a>';
+        $html .= '<a href="'.$link_iubenda.'"><img alt="Iubenda" class="card-img-top" src="'.Uri::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-iubenda.png" /></a>';
         $html .= '<div class="card-body">';
         $html .= '<h5 class="card-title mb-4">Iubenda - Get 10% first year/month discount</h5>';
         $html .= '<p class="card-text">Make your site GDPR compliant now. Create the Cookie banner. Get Google Consent Mode, start measuring Google Analytics traffic and Google Ads conversions even when the consent banner is rejected.</p>';
@@ -124,7 +126,7 @@ class JFormFieldDigigetloginadv extends JFormField {
         // NordVPN
         $html .= '<div class="'.$col_class.'" id="adv_nordvpn">';
         $html .= '<div class="'.$card_class.' text-start text-left">';
-        $html .= '<a href="'.$link_nordvpn.'"><img alt="NordVPN" class="card-img-top" src="'.JURI::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-nordvpn.png" /></a>';
+        $html .= '<a href="'.$link_nordvpn.'"><img alt="NordVPN" class="card-img-top" src="'.Uri::root().'plugins'.DS.'system'.DS.'digigetlogin'.DS.'assets'.DS.'images'.DS.'logo-nordvpn.png" /></a>';
         $html .= '<div class="card-body">';
         $html .= '<h5 class="card-title mb-4">NordVPN - Get up to 73% off discount + 3 extra months</h5>';
         $html .= '<p class="card-text">Surf online with peace of mind. NordVPN will meet your daily cybersecurity needs by protecting your Internet traffic and blocking dangerous websites, advertisements and malware.</p>';

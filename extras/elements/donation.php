@@ -15,9 +15,12 @@ defined('_JEXEC') or die;
 // Define DS
 if(!defined('DS')) define('DS', DIRECTORY_SEPARATOR);
 
-jimport('joomla.form.formfield');
+use Joomla\CMS\Factory;
+use Joomla\CMS\Form\FormField;
+use Joomla\CMS\Language\Text;
+use Joomla\CMS\Uri\Uri;
 
-class JFormFieldDonation extends JFormField {
+class JFormFieldDonation extends FormField {
     protected $type = 'Donation';
     
     protected function getInput() {
@@ -32,7 +35,7 @@ class JFormFieldDonation extends JFormField {
         $text_prefix = 'PLG_SYSTEM_DIGIGETLOGIN';
 		
     	// General variables
-    	$document = JFactory::getDocument();
+    	$document = Factory::getDocument();
     	$joomlaVersion = JVERSION;
     	
     	// Specific classes and styles based on Joomla version
@@ -92,7 +95,7 @@ class JFormFieldDonation extends JFormField {
 		$document->addStyleDeclaration('
 			#digigreg_donation {
 				background-color: #00b16a;
-				background-image: url("'.JURI::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'pattern-donation.png");
+				background-image: url("'.Uri::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'pattern-donation.png");
 				background-repeat: repeat;
 				position: relative;
 				z-index: 0;
@@ -171,14 +174,14 @@ class JFormFieldDonation extends JFormField {
         $html .= '<div class="'.$col_class_12.'">';
         $html .= '<div id="digigreg_donation" class="'.$card_class.'">';
         $html .= '<div id="digigreg_donation_text" class="'.$card_body_class.'">';
-        $html .= '<h2 class="'.$card_title_class.' text-light">'.strToUpper(JText::_($text_prefix.'_DONATION_TITLE')).'</h2>';
-        $html .= '<p class="'.$card_text_class.' bg-light text-dark rounded p-3">'.JText::_($text_prefix.'_DONATION_DESC').'<br /><small><i class="text-dark">'.JText::_($text_prefix.'_DONATION_SIGN').'</i></small>'.'</p>';
+        $html .= '<h2 class="'.$card_title_class.' text-light">'.strToUpper(Text::_($text_prefix.'_DONATION_TITLE')).'</h2>';
+        $html .= '<p class="'.$card_text_class.' bg-light text-dark rounded p-3">'.Text::_($text_prefix.'_DONATION_DESC').'<br /><small><i class="text-dark">'.Text::_($text_prefix.'_DONATION_SIGN').'</i></small>'.'</p>';
         $html .= '<div class="'.$card_text_class.' '.$bg_success_class.' text-light rounded p-3">';
-        $html .= '<span class="text-uppercase">'.JText::_($text_prefix.'_PAYMENT_ADDRESSES').'</span> <br />';
+        $html .= '<span class="text-uppercase">'.Text::_($text_prefix.'_PAYMENT_ADDRESSES').'</span> <br />';
         $html .= '<span class="btn-group btn-group-sm mt-1" role="group">';
-        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$paypal_link.'"><img class="btn-img" src="'.JURI::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-paypal.png" alt="PayPal" />PayPal</a>';
-        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$revolut_link.'"><img class="btn-img" src="'.JURI::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-revolut.png" alt="Revolut" />Revolut</a>';
-        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$kofi_link.'"><img class="btn-img" src="'.JURI::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-ko-fi.png" alt="Ko-fi" />Ko-fi</a>';
+        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$paypal_link.'"><img class="btn-img" src="'.Uri::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-paypal.png" alt="PayPal" />PayPal</a>';
+        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$revolut_link.'"><img class="btn-img" src="'.Uri::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-revolut.png" alt="Revolut" />Revolut</a>';
+        $html .= '<a class="btn btn-outline-light" target="_blank" href="'.$kofi_link.'"><img class="btn-img" src="'.Uri::root().$extension_family.DS.$plugin_type.DS.$extension_name.DS.'assets'.DS.'images'.DS.'logo-ko-fi.png" alt="Ko-fi" />Ko-fi</a>';
         $html .= '</span>';
         $html .= '</div>';
 		$html .= '</div>';
